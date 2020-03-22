@@ -18,8 +18,8 @@ import os
 import csv
 
 # budget_data.csv
-path = "C:\Users\momina\python-challenge\PyBank"
-budget_file = (os.path.join('path', 'budget_data.csv')
+# path = "C:\Users\momina\python-challenge\PyBank"
+budget_file = ('budget_data.csv')
 
 with open(budget_file) as csvfile:
 
