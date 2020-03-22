@@ -69,14 +69,19 @@ with open(budget_file) as csvfile:
     CurrentValue += int(row[1]) - int(FirstValue)
 
     # Find the change in profits
-            ChangeList.append(CurrentValue)
+            ChangeList.append[CurrentValue]
             
             for change in ChangeList:
                 # Find out whether greatest increase/greatest decrease
                 # List manipulation of some sort here
                 if CurrentValue > G_Incr_P:
-                    G_Incr_P = CureentValue
-                    # record month
+                    G_Incr_P = CurrentValue
+                    print(FirstValue)
+                    print(CurrentValue)
+                    print(G_Incr_P)
                 else cur_change  < G_Decr_L:
                     G_Decr_L = CurrentValue
+                    print(FirstValue)
+                    print(CurrentValue)
+                    print(G_Decr_L)
 
