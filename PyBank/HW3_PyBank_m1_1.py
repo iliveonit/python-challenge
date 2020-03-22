@@ -30,7 +30,7 @@ with open(budget_file) as csvfile:
 # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
-    
+
     # Total_Months = len(list(csvreader))
-    Total_Months = int(sum(1 for row in open(budget_file,"r",encoding="utf-8")))
+    Total_Months = int(sum(1 for row in open(budget_file,"r",encoding="utf-8")) -1)
     print(Total_Months)
