@@ -1,6 +1,9 @@
 # HW3-Tasks
 # PyBank
 
+# HW3-Tasks
+# PyBank
+
 # #######################################################################################
 # The total number of months included in the dataset
 # The net total amount of "Profit/Losses" over the entire period
@@ -18,14 +21,21 @@ import os
 import csv
 
 Total_Months = 0
+
 Total_ProfitLoss = 0
+
 MaxProfit = 0
 MinProfit = 0
+
 AvgChngPL = 0
+
+FirstValue = 0
+CurrentValue = 0
+
 G_Incr_P = 0
 G_Decr_L = 0
 
-Change_List = []
+ChangeList = []
 
 # budget_data.csv
 # path = "C:\Users\momina\python-challenge\PyBank"
@@ -54,4 +64,19 @@ with open(budget_file) as csvfile:
     Total_ProfitLoss += int(row[1])
     print(Total_ProfitLoss)
 
-    
+    # The average of the changes in "Profit/Losses" over the entire period
+    FirstValue += int(row[1])
+    CurrentValue += int(row[1]) - int(FirstValue)
+
+    # Find the change in profits
+            ChangeList.append(CurrentValue)
+            
+            for change in ChangeList:
+                # Find out whether greatest increase/greatest decrease
+                # List manipulation of some sort here
+                if CurrentValue > G_Incr_P:
+                    G_Incr_P = CureentValue
+                    # record month
+                else cur_change  < G_Decr_L:
+                    G_Decr_L = CurrentValue
+
