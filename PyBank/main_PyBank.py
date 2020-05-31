@@ -1,8 +1,4 @@
-# HW3-Tasks
-# PyBank
-
-# HW3-Tasks
-# PyBank
+# HW3-# PyBank
 
 # #######################################################################################
 # The total number of months included in the dataset
@@ -21,7 +17,6 @@ import os
 import csv
 
 Total_Months = 0
-
 Total_ProfitLoss = 0
 
 MaxProfit = 0
@@ -37,51 +32,49 @@ G_Decr_L = 0
 
 ChangeList = []
 
-# budget_data.csv
 # path = "C:\Users\momina\python-challenge\PyBank"
+#file = 'python-challenge/PyBank/budget_data.csv'
 budget_file = ('budget_data.csv')
 
 with open(budget_file) as csvfile:
-
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
-
     print(csvreader)
 
-    # Read the header row first (skip this step if there is now header)
+    # This skips the first row of the CSV file - Header
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csvreader:
-        print(row)
-
-    # The total number of months included in the dataset
-    Total_Months = int(sum(1 for row in open(budget_file,"r",encoding="utf-8")) -1)
-    print(Total_Months)
+        #print(row)
+        # The total number of months included in the dataset
+        Total_Months = int(sum(1 for row in open(budget_file,"r",encoding="utf-8")) -1)
+        print(Total_Months)
     
-    # The net total amount of "Profit/Losses" over the entire period
-    Total_ProfitLoss += int(row[1])
-    print(Total_ProfitLoss)
+        # The net total amount of "Profit/Losses" over the entire period
+        Total_ProfitLoss += int(row[1])
+        print(Total_ProfitLoss)
 
-    # The average of the changes in "Profit/Losses" over the entire period
-    FirstValue += int(row[1])
-    CurrentValue += int(row[1]) - int(FirstValue)
+        # The average of the changes in "Profit/Losses" over the entire period
+        FirstValue += int(row[1])
+        CurrentValue += int(row[1]) - int(FirstValue)
+        print(CurrentValue)
 
-    # Find the change in profits
-            ChangeList.append[CurrentValue]
+        # Find the change in profits
+        ChangeList.append[CurrentValue]
             
-            for change in ChangeList:
-                # Find out whether greatest increase/greatest decrease
-                # List manipulation of some sort here
-                if CurrentValue > G_Incr_P:
-                    G_Incr_P = CurrentValue
-                    print(FirstValue)
-                    print(CurrentValue)
-                    print(G_Incr_P)
-                else cur_change  < G_Decr_L:
-                    G_Decr_L = CurrentValue
-                    print(FirstValue)
-                    print(CurrentValue)
-                    print(G_Decr_L)
+    for change in ChangeList:
+        # Find out whether greatest increase/greatest decrease
+        # List manipulation of some sort here
+        if CurrentValue > G_Incr_P:
+            G_Incr_P = CurrentValue
+            print(FirstValue)
+            print(CurrentValue)
+            print(G_Incr_P)
+        elif CurrentValue  < G_Decr_L:
+            G_Decr_L = CurrentValue
+            print(FirstValue)
+            print(CurrentValue)
+            print(G_Decr_L)
 
