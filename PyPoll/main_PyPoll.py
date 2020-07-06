@@ -35,13 +35,18 @@ with open(election_file) as csvfile:
     # A complete list of candidates who received votes
     # --------------------------------------------------------------------
     Candidate = []
-    Votes = 0
-
+    Votes = []
+    
     for row in csvreader:
         if row[2] not in Candidate:
             Candidate.append(row[2])
     print(Candidate)
 
+    for row in csvreader:
+        Votes = 0
+        if row[2] in Candidate:
+            Votes = Votes + 1
+    print ("Votes : ", Votes)
 
     # votes = 0
     # for row in csvreader:
@@ -81,6 +86,7 @@ print(Candidate[1])
 print(Candidate[2])
 print(Candidate[3])
 print("-----------------------------------------------" )
+print("The percentage of votes each candidate won:")
 print("Khan            : ", )     # 63.000% (2218231)
 print("Correy          : ", )     # 20.000% (704200)
 print("Li              : ", )     # 14.000% (492940)
@@ -88,3 +94,35 @@ print("O'Tooley        : ", )     #  3.000% (105630)
 print("----------------  ")
 print("Winner: Khan")
 print("----------------  ")
+
+# Specify the file to write to
+output_path = os.path.join('.','PyPoll_Results.txt')
+
+# Open the file using "write" mode; with variable to hold content
+# with open(output_path, 'w') as csvfile:
+file = open(output_path, 'w')
+file.write("Election Results: ")
+file.write("----------------  ")
+file.write("Total Votes     : " % total_votes)
+file.write("----------------" )
+file.write("Complete list of candidates who received votes: ")
+file.write("-----------------------------------------------" )
+file.write(Candidate[0])
+file.write(Candidate[1])
+file.write(Candidate[2])
+file.write(Candidate[3])
+file.write("-----------------------------------------------" )
+file.write("The percentage of votes each candidate won:")
+file.write("Khan            : ")     # 63.000% (2218231)
+file.write("Correy          : " )     # 20.000% (704200)
+file.write("Li              : " )     # 14.000% (492940)
+file.write("O'Tooley        : " )     #  3.000% (105630)
+file.write("----------------  ")
+file.write("Winner: Khan")
+file.write("----------------  ")
+
+file.close()
+
+# ---------------------------------------------------------------------------
+# End of code
+# ---------------------------------------------------------------------------
