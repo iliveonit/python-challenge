@@ -35,12 +35,21 @@ with open(election_file) as csvfile:
     # A complete list of candidates who received votes
     # --------------------------------------------------------------------
     Candidate = []
+    Votes = 0
 
     for row in csvreader:
         if row[2] not in Candidate:
-            Candidate.append(row[2])    
-            
-    print(Candidate) 
+            Candidate.append(row[2])
+    print(Candidate)
+
+
+    # votes = 0
+    # for row in csvreader:
+    #     for name in Candidate:
+    #       votes = 0
+    #       if row[2] == Candidate:
+    #           votes.append(row[0])
+    #       print(Candidate, votes) 
 
 # --------------------------------------------------------------------
 # The percentage of votes each candidate won
@@ -72,10 +81,10 @@ print(Candidate[1])
 print(Candidate[2])
 print(Candidate[3])
 print("-----------------------------------------------" )
-# print("Khan            : ", )     # 63.000% (2218231)
-# print("Correy          : ", )     # 20.000% (704200)
-# print("Li              : ", )     # 14.000% (492940)
-# print("O'Tooley        : ", )     #  3.000% (105630)
-# print("----------------  ")
-# print("Winner: Khan
-# print("----------------  ")
+print("Khan            : ", )     # 63.000% (2218231)
+print("Correy          : ", )     # 20.000% (704200)
+print("Li              : ", )     # 14.000% (492940)
+print("O'Tooley        : ", )     #  3.000% (105630)
+print("----------------  ")
+print("Winner: Khan")
+print("----------------  ")
