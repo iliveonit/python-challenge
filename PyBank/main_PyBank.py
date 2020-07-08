@@ -26,6 +26,7 @@ profit_array = []
 loss_array = []
 
 total_mnths = 0
+total_PL = 0
 net_PL = 0
 avg_PL = 0
 g_incr = 0
@@ -61,16 +62,17 @@ csv_header = next(cr) # to skip the header
 
 for row in cr:
     #print(row[1])
-    Total_PL += int(row[1])
+    total_PL += int(row[1])
+    # net_PL = total_PL / total_mnths
 
     #Total_ProfitLoss = int(sum(row[1] for row in open(budget_file,"r",encoding="utf-8")) -1)
-    #print("Total: ", Total_PL)
-print("Net Profit/Losses for the period : ", Total_PL)
+    #print("Total: ", net_PL)
+print("Total Profit/Losses for the period : ", total_PL)
 
 # --------------------------------------------------------------------------
 # The average of the changes in "Profit/Losses" over the entire period
 
-avg_PL = net_PL / total_mnths
+avg_PL = total_PL / total_mnths
 print("Average changes in Profit/Losses : ", avg_PL)
 
 # --------------------------------------------------------------------------
@@ -120,7 +122,8 @@ file.write("-----------------------------------------------" )
 file.write("Financial Analysis: ")
 file.write("-----------------------------------------------" )
 file.write("Total Months included in the dataset : " % total_mnths)   # 86 Months
-file.write("Net amount of Profit/Losses          : " % net_PL)        # $38382578
+file.write("Total amount of Profit/Losses        : " % total_PL)      # $38382578
+file.write("Net amount of Profit/Losses          : " % net_PL)        # ? 
 file.write("Average  Change of Profit/Losses     : " % avg_PL)        # $-2315.12
 file.write("Greatest Increase in Profits         : " % g_incr)        # Feb-2012 ($1926159)
 file.write("Greatest Decrease in Profits         : " % g_decr)        # Sep-2013 ($-2196167)
