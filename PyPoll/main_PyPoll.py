@@ -8,6 +8,9 @@ import os
 # Modules for reading CSV files
 import csv
 
+# --------------------------------------------------------------------------
+# Input file 
+
 # path = "C:\Users\momina\python-challenge\PyPoll"
 # file = 'python-challenge/PyPoll/election_data.csv'
 # 3 columns: `Voter ID`, `County`, and `Candidate`
@@ -15,6 +18,8 @@ import csv
 # csvpath = os.path.join('.','election_data.csv')
 
 election_file = ('election_data.csv')
+
+# --------------------------------------------------------------------------
 
 total_votes = 0
 with open(election_file) as csvfile:
@@ -73,8 +78,6 @@ with open(election_file) as csvfile:
 # The winner of the election based on popular vote.
 # --------------------------------------------------------------------
 
-       
-
 print("Election Results: ")
 print("----------------  ")
 print("Total Votes     : ", total_votes)
@@ -94,6 +97,9 @@ print("O'Tooley        : ", )     #  3.000% (105630)
 print("----------------  ")
 print("Winner: Khan")
 print("----------------  ")
+
+# --------------------------------------------------------------------
+# In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
 # Specify the file to write to
 output_path = os.path.join('.','PyPoll_Results.txt')
@@ -120,7 +126,6 @@ file.write("O'Tooley        : " )     #  3.000% (105630)
 file.write("----------------  ")
 file.write("Winner: Khan")
 file.write("----------------  ")
-
 file.close()
 
 # ---------------------------------------------------------------------------
