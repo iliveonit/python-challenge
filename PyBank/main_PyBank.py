@@ -89,14 +89,18 @@ for row in reader:
     # Find the change in profits
     curr_change = row[1] - first_value
     change_list.append(curr_change)
+    print("Value of curr_change: ", curr_change)
+    print("Value of change_list: ", change_list)
 
     for change in change_list:
       # Find out the g_incr/g_decr
 
-      if curr_change > g_incr
+      if (curr_change > g_incr):
         g_incr = curr_change
-      else 
+        print("Value of g_incr: ", g_incr)
+      else:
         curr_change < g_decr
+        print("Value of g_decr: ", g_decr)
  
 # ---------------------------------------------------------------------------
 # Get the previous value
